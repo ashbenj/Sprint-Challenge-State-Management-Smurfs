@@ -23,10 +23,30 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+-Context API allows us to store state in context and allows access to it no matter what component we are in.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+-Actions are like messages that we send (dispatch) to our central Redux store.
+
+-Reducers specify how the application's state changes in response to actions sent to the store.
+
+-Store is the object that brings them all together.
+
+-The store is known as a 'single source of truth' because it is where we can see what changed since it contains our state for the application. The state never mutates, so it is the 'single source of truth'.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+-Application state contains all the state in our app whereas, the component state contains state locally. We would use the application state if we are planning to have many components that need access to different parts of state and are nested.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+-Redux-think is a middleware that lets you call action creators that return a function instead of an action object. That function receives the store's dispatch method, which is then used to dispatch regular synchornous actions inside the body of the function once the asynchornous operations are completed.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+-Context API, it makes more sense to me and is easier to complete than redux.
 
 ## Project Set Up
 
@@ -60,12 +80,12 @@ Follow these steps to set up your project:
 
 ```js
 [
-  {
-    name: "Brainey",
-    age: 200,
-    height: "5cm",
-    id: 0
-  }
+	{
+		name: 'Brainey',
+		age: 200,
+		height: '5cm',
+		id: 0
+	}
 ];
 ```
 
@@ -93,18 +113,18 @@ Example of object created in Smurf DB:
 
 ```js
 [
-  {
-    name: "Brainey",
-    age: 200,
-    height: "5cm",
-    id: 0
-  },
-  {
-    name: "Sleepy",
-    age: 200,
-    height: "5cm",
-    id: 1
-  }
+	{
+		name: 'Brainey',
+		age: 200,
+		height: '5cm',
+		id: 0
+	},
+	{
+		name: 'Sleepy',
+		age: 200,
+		height: '5cm',
+		id: 1
+	}
 ];
 ```
 
@@ -153,11 +173,11 @@ Example:
 
 ```js
 output: [
-  {
-    name: "Sleepy",
-    age: 200,
-    height: "5cm",
-    id: 1
-  }
+	{
+		name: 'Sleepy',
+		age: 200,
+		height: '5cm',
+		id: 1
+	}
 ];
 ```
